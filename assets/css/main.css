@@ -416,6 +416,7 @@ section { position: relative; padding: 108px 0; }
   border-radius: 16px;
   transition: all .3s cubic-bezier(.2,.6,.2,1);
   box-shadow: var(--shadow-sm);
+  min-width: 0;
 }
 .stats div:hover {
   border-color: var(--accent);
@@ -423,9 +424,13 @@ section { position: relative; padding: 108px 0; }
   transform: translateY(-4px);
   box-shadow: 0 16px 36px -8px var(--accent-soft);
 }
-.stats strong { display: block; font-size: 1.6rem; margin-bottom: 6px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700; }
-.stats span { font-size: .82rem; color: var(--text-faint); font-weight: 500; }
+.stats strong { display: block; font-size: 1.6rem; margin-bottom: 6px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 700; overflow-wrap: break-word; word-break: break-word; }
+.stats span { font-size: .82rem; color: var(--text-faint); font-weight: 500; overflow-wrap: break-word; word-break: break-word; }
 @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) {
+  .stats div { padding: 20px 12px; }
+  .stats strong { font-size: 1.25rem; }
+}
 
 /* ---------- Cards (generic) ---------- */
 .card {
